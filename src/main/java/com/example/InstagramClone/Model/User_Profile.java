@@ -16,6 +16,11 @@ public class User_Profile {
     private String gmail;
     private String role;
 
+    @OneToMany(mappedBy = "userProfile")
+    private List<Reaction> reactions;
+    @OneToOne(mappedBy = "user_profile")
+    private Comment comment;
+
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Post> posts;
 
