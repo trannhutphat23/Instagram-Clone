@@ -3,8 +3,6 @@ package com.example.InstagramClone.Model;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
-import java.util.List;
-
 @Entity
 @Table(name = "reaction")
 public class Reaction {
@@ -26,4 +24,36 @@ public class Reaction {
     )
     @JsonBackReference
     private Post post;
+
+    public Reaction() {
+    }
+
+    public Reaction(User_Profile userProfile, Post post) {
+        this.userProfile = userProfile;
+        this.post = post;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public User_Profile getUserProfile() {
+        return userProfile;
+    }
+
+    public void setUserProfile(User_Profile userProfile) {
+        this.userProfile = userProfile;
+    }
+
+    public Post getPost() {
+        return post;
+    }
+
+    public void setPost(Post post) {
+        this.post = post;
+    }
 }

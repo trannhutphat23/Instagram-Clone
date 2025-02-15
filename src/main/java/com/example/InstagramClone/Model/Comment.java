@@ -19,4 +19,5 @@ public class Comment {
     private User_Profile user_profile;
 
     private String content;
+
 }
