@@ -1,42 +1,41 @@
 package com.example.InstagramClone.Model;
 
 import jakarta.persistence.*;
-import org.apache.catalina.User;
 
 @Entity
 @Table(name = "comment")
 public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(
         name = "user_id",
-        referencedColumnName = "id",
+        referencedColumnName = "user_id",
         foreignKey = @ForeignKey(name = "fk_user_comment")
     )
-    private User_Profile user_profile;
+    private User_Profile userProfile;
     private String content;
     public Comment() {
     }
-    public Comment(User_Profile user_profile, String content) {
-        this.user_profile = user_profile;
+    public Comment(User_Profile userProfile, String content) {
+        this.userProfile = userProfile;
         this.content = content;
     }
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
     public User_Profile getUser_profile() {
-        return user_profile;
+        return userProfile;
     }
 
-    public void setUser_profile(User_Profile user_profile) {
-        this.user_profile = user_profile;
+    public void setUser_profile(User_Profile userProfile) {
+        this.userProfile = userProfile;
     }
 
     public String getContent() {

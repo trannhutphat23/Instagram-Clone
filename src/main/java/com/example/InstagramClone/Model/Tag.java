@@ -1,7 +1,6 @@
 package com.example.InstagramClone.Model;
 
 import jakarta.persistence.*;
-import org.apache.catalina.User;
 
 @Entity
 public class Tag {
@@ -13,5 +12,7 @@ public class Tag {
     @JoinColumn(name="post_id", nullable = false)
     private Post post;
 
-    private User user;
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User_Profile userProfile;
 }

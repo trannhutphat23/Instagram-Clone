@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
+@Table(name = "user_profile")
 public class User_Profile {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,11 +19,14 @@ public class User_Profile {
 
     @OneToMany(mappedBy = "userProfile")
     private List<Reaction> reactions;
-    @OneToOne(mappedBy = "user_profile")
+    @OneToOne(mappedBy = "userProfile")
     private Comment comment;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Post> posts;
+
+    @OneToMany(mappedBy = "userProfile", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Tag> tags;
 
     // Getters and Setters
     public Long getUser_id() {
