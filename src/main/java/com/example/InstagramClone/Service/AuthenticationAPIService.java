@@ -11,10 +11,8 @@ import java.util.Objects;
 @Service
 public class AuthenticationAPIService {
     private static final String X_API_KEY = "INSTAGRAM_APP";
-//    private static final String AUTH_TOKEN = "Baeldung";
     public static ApiKeyAuthenticationToken getAuthentication(HttpServletRequest request){
         String api_key = request.getHeader("X_API_KEY");
-        System.out.println("API Key: " + api_key);
         if (!Objects.equals(api_key, X_API_KEY)) {
             throw new BadCredentialsException("Invalid API Key");
         }
