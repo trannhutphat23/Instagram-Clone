@@ -6,6 +6,8 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.stereotype.Service;
 
+import java.util.Objects;
+
 @Service
 public class AuthenticationAPIService {
     private static final String X_API_KEY = "INSTAGRAM_APP";
@@ -13,7 +15,7 @@ public class AuthenticationAPIService {
     public static ApiKeyAuthenticationToken getAuthentication(HttpServletRequest request){
         String api_key = request.getHeader("X_API_KEY");
         System.out.println("API Key: " + api_key);
-        if (api_key == null) {
+        if (!Objects.equals(api_key, X_API_KEY)) {
             throw new BadCredentialsException("Invalid API Key");
         }
 

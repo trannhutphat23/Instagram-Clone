@@ -18,9 +18,7 @@ public class AuthenticationService {
 
     public String signup(HttpServletRequest request) {
         try {
-            System.out.println("ccc");
             ApiKeyAuthenticationToken token = authenticationAPIService.getAuthentication(request);
-
 
             if (token.isAuthenticated()) {
                 return "123"; // Success response
