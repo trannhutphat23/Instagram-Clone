@@ -8,7 +8,7 @@ import jakarta.persistence.*;
 public class Reaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     @ManyToOne
     @JoinColumn(
             name = "user_id",
@@ -33,11 +33,11 @@ public class Reaction {
         this.post = post;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

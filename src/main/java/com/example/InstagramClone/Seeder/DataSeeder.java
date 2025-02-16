@@ -22,10 +22,7 @@ public class DataSeeder implements CommandLineRunner {
         user.setPhone("123456789");
         user.setGmail("john@example.com");
         user.setRole("USER");
-
         userRepository.save(user);
-
-        System.out.println("✅ Dữ liệu đã được đẩy vào database thành công!");
     }
 
 }
