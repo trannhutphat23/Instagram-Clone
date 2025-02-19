@@ -33,4 +33,4 @@ build/
 .vscode/
 
 ### Sensitive files
-src/main/resources/security.properties
+security.properties
