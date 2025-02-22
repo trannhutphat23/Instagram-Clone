@@ -14,5 +14,5 @@ public class Tag {
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
-    private User_Profile userProfile;
+    private User userProfile;
 }

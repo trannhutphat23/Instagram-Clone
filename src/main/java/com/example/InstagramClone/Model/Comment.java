@@ -14,11 +14,11 @@ public class Comment {
         referencedColumnName = "user_id",
         foreignKey = @ForeignKey(name = "fk_user_comment")
     )
-    private User_Profile userProfile;
+    private User userProfile;
     private String content;
     public Comment() {
     }
-    public Comment(User_Profile userProfile, String content) {
+    public Comment(User user, String content) {
         this.userProfile = userProfile;
         this.content = content;
     }
@@ -30,11 +30,11 @@ public class Comment {
         this.id = id;
     }
 
-    public User_Profile getUser_profile() {
+    public User getUser_profile() {
         return userProfile;
     }
 
-    public void setUser_profile(User_Profile userProfile) {
+    public void setUser_profile(User userProfile) {
         this.userProfile = userProfile;
     }
 

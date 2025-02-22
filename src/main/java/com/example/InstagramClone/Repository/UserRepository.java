@@ -1,9 +1,12 @@
 package com.example.InstagramClone.Repository;
 
-import com.example.InstagramClone.Model.User_Profile;
+import com.example.InstagramClone.Model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
-public interface UserRepository extends JpaRepository<User_Profile, Long> {
+public interface UserRepository extends JpaRepository<User, Long> {
+   Optional<User> findByUsername(String username);
 }

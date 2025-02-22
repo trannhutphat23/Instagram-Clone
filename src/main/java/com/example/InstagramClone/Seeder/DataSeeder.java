@@ -1,6 +1,5 @@
 package com.example.InstagramClone.Seeder;
 
-import com.example.InstagramClone.Model.User_Profile;
 import com.example.InstagramClone.Repository.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -16,13 +15,14 @@ public class DataSeeder implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        User_Profile user = new User_Profile();
-        System.out.println(user);
-        user.setUserName("JohnDoe");
-        user.setPhone("123456789");
-        user.setGmail("john@example.com");
-        user.setRole("USER");
-        userRepository.save(user);
+//        User_Profile user = new User_Profile();
+//        System.out.println(user);
+//        user.setUserName("ToTanVinh");
+//        user.setPassWord("123467");
+//        user.setPhone("123456789");
+//        user.setGmail("john@example.com");
+//        user.setRole("USER");
+//        userRepository.save(user);
     }
 
 }

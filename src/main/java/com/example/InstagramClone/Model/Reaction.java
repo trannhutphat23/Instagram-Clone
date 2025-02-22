@@ -15,7 +15,7 @@ public class Reaction {
             foreignKey = @ForeignKey(name = "fk_user_profile_react")
     )
     @JsonBackReference
-    private User_Profile userProfile;
+    private User userProfile;
 
     @ManyToOne
     @JoinColumn(
@@ -28,7 +28,7 @@ public class Reaction {
     public Reaction() {
     }
 
-    public Reaction(User_Profile userProfile, Post post) {
+    public Reaction(User userProfile, Post post) {
         this.userProfile = userProfile;
         this.post = post;
     }
@@ -41,11 +41,11 @@ public class Reaction {
         this.id = id;
     }
 
-    public User_Profile getUserProfile() {
+    public User getUserProfile() {
         return userProfile;
     }
 
-    public void setUserProfile(User_Profile userProfile) {
+    public void setUserProfile(User userProfile) {
         this.userProfile = userProfile;
     }
 

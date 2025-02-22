@@ -14,7 +14,7 @@ public class Post {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private User_Profile user;
+    private User user;
 
     @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Image> imageList;
@@ -48,11 +48,11 @@ public class Post {
         this.content = content;
     }
 
-    public User_Profile getUser() {
+    public User getUser() {
         return user;
     }
 
-    public void setUser(User_Profile user) {
+    public void setUser(User user) {
         this.user = user;
     }
 
